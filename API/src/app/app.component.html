@@ -16,6 +16,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .newBorder{
+    border: 2px dashed;
+    border-color: red;
+    padding: 20px;
+    width: 1800px;
+    margin: 10px;
+}
 
   h1,
   h2,
@@ -327,8 +334,11 @@
 </div>
 
 <div class="content" role="main">
-
+    <app-login-component class="newBorder"></app-login-component>
+    <app-attendance-component class="newBorder"></app-attendance-component>
+    <app-classes-component class="newBorder"></app-classes-component>
 </div>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
