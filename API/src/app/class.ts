@@ -17,3 +17,7 @@ export class Class{
         this.labels = labels;
     }
 }
+
+export class ClassesRespoonse {
+    classes: Class[];
+}

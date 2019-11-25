@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Class } from '../class';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-classes-component',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classes-component.component.css']
 })
 export class ClassesComponentComponent implements OnInit {
+  classes: Class[];
 
-  constructor() { }
+  service: APIService
+
+  constructor(service: APIService) {
+    this.service = service;
+   }
 
   ngOnInit() {
+    this.getClasses();
   }
 
+  getClasses(): void{
+    this.service.getClasses()
+    // .subscribe((data: Class[]) => {console.log(data); this.classes = data;});
+
+    // .subscribe(classes => this.classes = classes)
+  }
 }
