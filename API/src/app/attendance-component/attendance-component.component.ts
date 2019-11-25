@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { attendance } from '../attendance';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-attendance-component',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./attendance-component.component.css']
 })
 export class AttendanceComponentComponent implements OnInit {
+  attendances: attendance[];
 
-  constructor() { }
+  service: APIService
+
+  constructor(service: APIService) {
+    this.service = service;
+   }
 
   ngOnInit() {
+    this.getAttendances();
   }
 
+  getAttendances(): void{
+    this.service.getAttendances()
+  }
 }
+

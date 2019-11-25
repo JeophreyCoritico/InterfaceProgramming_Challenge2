@@ -19,3 +19,7 @@ export class attendance {
         this.dateSignedIn = dateSignedIn;
     }
 }
+
+export class AttendanceRespoonse {
+    attendances: attendance[];
+}
