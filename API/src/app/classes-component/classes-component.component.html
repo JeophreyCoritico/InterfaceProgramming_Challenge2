@@ -1,8 +1,8 @@
 <h1>Classes</h1>
-<button>Fetch Classes</button>
-<li *ngFor="let Class of service.classes">
+<button (click)="getClasses()">Fetch Classes</button>
+<ul *ngFor="let Class of service.classes">
 <h1>{{Class.name}}</h1>
 <div>Every {{Class.day}}, {{Class.startTime}} - {{Class.endTime}}</div>
-<button>View Attendance</button>
-</li>
+<button (click)="service.getAttendances(Class.classId)">View Attendance</button>
+</ul>
 

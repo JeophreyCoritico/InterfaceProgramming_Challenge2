@@ -21,5 +21,5 @@ export class attendance {
 }
 
 export class AttendanceRespoonse {
-    attendances: attendance[];
+    attendance: attendance[];
 }

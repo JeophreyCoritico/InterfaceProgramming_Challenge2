@@ -12,25 +12,30 @@ export class APIService {
   classes: Class[] = [];
 
   attendances: attendance[] = [];
-  secret: string = "password";
+  secret: string = "";
   constructor(private http: HttpClient) { }
 
   getClasses()
   {
-    this.http.get<ClassesRespoonse>("http://45.77.238.164/classes?secret=password" + this.secret)
+    this.http.get<ClassesRespoonse>("http://45.77.238.164/classes?secret=" + this.secret)
     .subscribe((data: ClassesRespoonse) => {this.classes = data.classes;});
   }
 
-  getAttendances()
+  getAttendances(id: string)
   {
     //-------------------- need to do {classid} --------------------
-    this.http.get<AttendanceRespoonse>("http://45.77.238.164/attendance/{classid}?secret=password" + this.secret)
-    .subscribe((data: AttendanceRespoonse) => {this.attendances = data.attendances;});
+    this.http.get<AttendanceRespoonse>("http://45.77.238.164/attendance/" + id + "?secret=" + this.secret)
+    .subscribe((data: AttendanceRespoonse) => {console.log(data); this.attendances = data.attendance;});
   }
 
-  viewAttendance(id: number): Observable<Class>{
-    return of(classes.find(Class => Class.classId === id))
-  }
+  
+
+
+  // viewAttendance(id: number): Observable<Class>{
+  //   return of(classes.find(Class => Class.classId === id))
+  // }
+
+
   // getClasses(): Class[]
   // {
   //   return classes;

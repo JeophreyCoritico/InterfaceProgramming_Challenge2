@@ -1,6 +1,6 @@
 <h1>Attendance</h1>
-<button>Refresh</button>
-<li *ngFor="let attendance of service.attendances">
+<button (click)="dum()">Refresh</button>
+<ul *ngFor="let attendance of service.attendances">
 <div>{{attendance.firstname}}, {{attendance.status}}, {{attendance.id}}</div>
-</li>
+</ul>
 

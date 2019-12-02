@@ -17,7 +17,7 @@ export class ClassesComponentComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getClasses();
+
   }
 
   getClasses(): void{
@@ -26,4 +26,13 @@ export class ClassesComponentComponent implements OnInit {
 
     // .subscribe(classes => this.classes = classes)
   }
+
+  // viewAttendance(id: number)
+  // {
+  //   this.service.viewAttendance();
+  // }
+
+  // getAttendances(){
+  //   this.service.getAttendances();
+  // }
 }

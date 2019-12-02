@@ -1,4 +1,4 @@
 <h1>Login</h1>
-<div>API Secret <input type="text" placeholder="Secret"></div>
+<div>API Secret <input #Secret /></div>
 <br>
-<button>Save</button>
+<button (click)="getSecret(Secret.value); Secret.value=''">Save</button>

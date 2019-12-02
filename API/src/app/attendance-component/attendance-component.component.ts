@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { attendance } from '../attendance';
 import { APIService } from '../api.service';
 
@@ -12,16 +12,25 @@ export class AttendanceComponentComponent implements OnInit {
 
   service: APIService
 
+  // @Input() Attendance: attendance;
+
   constructor(service: APIService) {
     this.service = service;
    }
 
   ngOnInit() {
-    this.getAttendances();
+    // this.getAttendances();
   }
 
-  getAttendances(): void{
-    this.service.getAttendances()
+  // getAttendances(): void{
+  //   this.service.getAttendances()
+  // }
+  getAttendanceTest(){
+    
+  }
+
+  dum(){
+    console.log(this.service)
   }
 }
 
